@@ -6,6 +6,7 @@
 # Storyteller Suite
 
 Storyteller Suite is an Obsidian plugin for writers who want to manage their story world without leaving their vault. Characters, locations, events, groups, maps, manuscripts, and more — all stored as plain Obsidian notes, all editable directly or through the plugin's interface.
+![](https://i.ibb.co/6Jr2v9Fc/m3k-Jrkv.png)
 
 ## What it does
 

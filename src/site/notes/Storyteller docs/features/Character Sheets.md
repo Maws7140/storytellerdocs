@@ -6,6 +6,7 @@
 # Character Sheets
 
 Storyteller Suite can generate a formatted character sheet from any character's data. Sheets can be exported as a standalone HTML file or saved as an Obsidian note.
+![](https://i.ibb.co/SXDwp8VN/MA3utg-D.png)
 
 ## Generating a Sheet
 
@@ -19,7 +20,7 @@ Storyteller Suite can generate a formatted character sheet from any character's 
 
 Six built-in themes are included:
 
-**Classic**
+**Classic** 
 A dark glass aesthetic with a portrait panel, colored stat fields, and section cards on a dark background. The default theme.
 
 **Manuscript**

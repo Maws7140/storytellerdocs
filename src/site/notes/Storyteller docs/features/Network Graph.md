@@ -6,6 +6,7 @@
 # Network Graph
 
 The network graph is a visual representation of the relationships between entities in your story. Nodes represent characters, locations, groups, events, and other entities. Edges represent defined relationships between them.
+![](https://i.ibb.co/SwhJnKKN/k-Ev-Z6-FE.png)
 
 ## Opening the Graph
 

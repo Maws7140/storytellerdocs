@@ -5,9 +5,10 @@
 
 # Maps
 
-The map view is an interactive Leaflet-based viewer that lets you place entity markers on images — world maps, city plans, dungeon layouts, or any image file in your vault.
-
+The map view is an interactive Leaflet-based viewer that lets you place entity markers on images, world maps, city plans, dungeon layouts, or any image file in your vault.
+![|640x360](https://i.ibb.co/KxyzHm27/04c0d160200a.png)
 ## Opening the Map View
+
 
 **Command palette:** Storyteller Suite: Open map view
 **Dashboard:** Maps tab

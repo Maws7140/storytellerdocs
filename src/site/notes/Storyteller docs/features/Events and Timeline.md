@@ -6,6 +6,7 @@
 # Events and Timeline
 
 The timeline gives you a scrollable, filterable view of your story's events. It supports multiple tracks, era overlays, custom date systems, and conflict detection.
+![](https://i.ibb.co/rKDqXv92/yh2WJ9r.png)
 
 ## Creating an Event
 

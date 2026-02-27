@@ -6,6 +6,7 @@
 # Analytics
 
 The analytics dashboard surfaces writing statistics about your story. It reads from your existing scene and character notes — no separate data entry is required.
+![](https://i.ibb.co/QFdYG2r4/q-Ha-EDHX.png)
 
 ## Opening the Analytics Dashboard
 
