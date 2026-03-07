@@ -6,7 +6,7 @@
 # Analytics
 
 The analytics dashboard surfaces writing statistics about your story. It reads from your existing scene and character notes — no separate data entry is required.
-![](https://i.ibb.co/QFdYG2r4/q-Ha-EDHX.png)
+![Analytics overview screenshot](https://i.ibb.co/bg0SQFb0/e18f469847c9.png)
 
 ## Opening the Analytics Dashboard
 
@@ -32,6 +32,8 @@ A breakdown of events by type or status, showing how your story's events are spr
 
 ### Writing Velocity
 Word counts over time, based on when scene notes were last modified. Tracks your writing pace across sessions.
+
+![Analytics detail screenshot](https://i.ibb.co/FbbZpxZc/795bb9892786.png)
 
 ### Dialogue Analysis
 An estimated breakdown of dialogue versus prose, derived from quotation marks in scene content.

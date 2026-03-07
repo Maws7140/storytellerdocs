@@ -5,70 +5,135 @@
 
 # Characters
 
-Characters are the most feature-rich entity type in Storyteller Suite. Each character is stored as an Obsidian note with YAML frontmatter for structured fields and markdown sections for free-form content.
+Characters are one of the core entity types in Storyteller Suite. Each character is stored as a normal Obsidian note with frontmatter for structured data and markdown sections for freeform writing.
 
-## Creating a Character
+## Creating a character
 
-**Command palette:** Storyteller Suite: Create new character
-**Dashboard:** Characters tab > Create character button
+You can create a character from:
+- **Command palette:** `Storyteller Suite: Create new character`
+- **Dashboard:** Characters tab -> Create character
 
-## Character Fields
+## Core character fields
 
-### Basic Information
-- **Name** — the character's display name, used as the note title
-- **Status** — alive, deceased, unknown, or a custom status
-- **Affiliation** — free-text field for organizational allegiances
+### Identity and presentation
+- **Name** - the note title and primary display label
+- **Status** - alive, missing, retired, dead, or any custom label
+- **Affiliation** - free-text allegiance or role
+- **Traits** - short descriptors used for filtering and sheet output
+- **Description** - who this character is in the story right now
+- **Backstory** - what happened before the current story
 
-### Physical Attributes
-A dedicated section for demographic and physical details. All fields are free-text to accommodate any genre or style:
+### Physical details
+Use these for either fiction or tabletop prep:
+- **Gender**
+- **Race / ancestry**
+- **Age**
+- **Height**
+- **Quirks**
 
-- **Gender** — gender identity or expression (e.g., Female, Non-binary, None)
-- **Race / Ancestry** — species, lineage, or origin (e.g., Human, Half-Elf, Clone)
-- **Age** — numerical or descriptive (e.g., 34, Ancient, Unknown)
-- **Height** — measurement or descriptor (e.g., 5'10", Towering, Short)
-- **Quirks & Mannerisms** — habits, ticks, and idiosyncrasies displayed as a freeform text block
+### Links and story context
+Characters can link to:
+- other characters through relationships
+- groups
+- current location and location history
+- scenes and chapters
+- items
+- compendium entries
+- economies, cultures, and magic systems
 
-Race and age are shown as small chips in the character's dashboard card alongside status and affiliation.
+## Inventory and ownership
 
-### Portrait
-A character can have a portrait image linked from your vault or gallery. The image path is stored in frontmatter and displayed in the character modal and on generated character sheets.
+Two character fields matter for item tracking:
 
-### Traits
-A comma-separated list of personality traits or descriptors. Displayed as tags on character sheets.
+- **Owned items** - items this character currently carries or controls
+- **Linked items** - items related to the character without implying direct ownership
 
-### Description and Backstory
-Two free-form markdown sections. Description is for how the character presents themselves in the world; Backstory covers their history. Both support full markdown formatting.
+Why this matters:
+- the character note stays useful for writing and worldbuilding
+- Campaign Play can seed party inventory from `ownedItems`
+- plot item ownership can still be reassigned during a live session
 
-### Relationships
-Links to other characters with a relationship type (ally, rival, family member, mentor, and so on) and an optional label for more detail. Relationships are directional — adding a relationship from A to B does not automatically create a reverse link on B.
+Use `ownedItems` for things the character actually has in hand. Use `linkedItems` for things they are chasing, guarding, or associated with.
 
-### Groups
-Characters can belong to one or more groups (factions, guilds, families). Assign groups here; the character will then appear in the group's members list.
+## D&D / RPG fields
 
-### Custom Fields
-Any number of key-value pairs for fields beyond the built-in set — pronouns, weapon of choice, theme song, occupation, birth date, and so on.
+Storyteller Suite now supports a lightweight D&D-style stat block directly on character notes.
 
-## Editing an Existing Character
+### Class block
+- `dndClass`
+- `dndSubclass`
+- `dndRace`
+- `dndLevel`
 
-Click the character's name in the dashboard Characters tab, or open the character's note and use the **Open character modal** button that appears in the note header.
+### Ability scores
+- `dndStr`
+- `dndDex`
+- `dndCon`
+- `dndInt`
+- `dndWis`
+- `dndCha`
 
-Changes made in the modal update the note's frontmatter and body sections. Changes made directly to the note are reflected the next time the modal opens.
+### Survival and combat
+- `dndMaxHp`
+- `dndCurrentHp`
+- `dndTempHp`
+- `dndAc`
+- `dndSpeed`
+- `dndProficiencyBonus`
+- `dndHitDice`
 
-## Character Sheet Export
+### Status and proficiencies
+- `dndConditions`
+- `dndSkillProficiencies`
+- `dndSavingThrowProficiencies`
 
-Storyteller Suite can generate a formatted character sheet from any character. Run **Storyteller Suite: Generate character sheet** while the character's note is active.
+You do not need to fill every D&D field. The useful minimum is:
+- level
+- six ability scores
+- max HP
+- current HP
+- AC
 
-Six visual themes are available: Classic, Manuscript, Minimal, Dossier, Neon, and D&D. You can switch between themes with a live preview before exporting.
+## How character data is used elsewhere
 
-Export options:
-- **Save to note** — creates a new note with the rendered sheet in markdown
-- **Export as HTML** — saves a standalone HTML file
+Character notes are not isolated. The plugin reuses them across systems:
 
-See [[Storyteller docs/features/Character Sheets\|Character Sheets]] for full details on each theme.
+- **Character Sheets** use the same note data for export and themed presentation.
+- **Timeline** can group or filter events around linked characters.
+- **Groups** show character membership automatically.
+- **Campaign Play** can use D&D stats for branch checks and HP tracking.
+- **Inventory tracking** can pull starting party items from character ownership.
 
-## Viewing All Characters
+## Character sheet export
 
-**Dashboard:** Characters tab
-**Command:** Storyteller Suite: View all characters
+Run **Storyteller Suite: Generate character sheet** while a character note is active.
 
-The character list shows name, race and age chips (if set), status, affiliation, balance, and a portrait thumbnail if one is set. Characters can be filtered by group membership or searched by name, description, and traits.
+Built-in themes include:
+- Classic
+- Manuscript
+- Minimal
+- Dossier
+- Neon
+- D&D
+
+The D&D theme is presentation only. It reads the same character note data you already entered.
+
+See [[Storyteller docs/features/Character Sheets\|Character Sheets]].
+
+## Good defaults for most users
+
+If you do not know how much detail to enter, start with this set:
+- Name
+- Description
+- Traits
+- Status
+- Affiliation
+- Groups
+- Current location
+
+If you are running campaign play, add:
+- D&D stats
+- HP
+- ownedItems
+
+That is enough for the rest of the plugin to stay useful without turning the note into data entry busywork.

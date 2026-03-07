@@ -5,58 +5,156 @@
 
 # Settings
 
-All settings are under **Settings > Storyteller Suite**.
+All settings live under **Settings > Storyteller Suite**.
+
+This page focuses on the settings that most users actually need to understand.
 
 ## General
 
-**Active story**
-The currently selected story. All entity creation and listing commands operate on this story.
+### Active story
+The currently selected story. Most commands and dashboard lists operate on this story.
 
-**Prevent auto-folder creation**
-When enabled, the plugin does not create the StorytellerSuite folder hierarchy on startup. You must create the folders manually before using the plugin.
+### Prevent auto-folder creation
+If enabled, Storyteller Suite will not create its folder structure for you.
 
-**Language**
-The UI language. English and German are included. Contributions for additional languages are welcome.
+Use this only if you want strict manual control over folder creation.
 
-## Folder Paths
+### Language
+Changes the plugin UI language.
 
-Each entity type has a dedicated folder where its notes are stored. All paths are relative to your vault root.
+## Folder paths
 
-| Setting | Default |
-|---------|---------|
-| Characters folder | StorytellerSuite/Characters |
-| Locations folder | StorytellerSuite/Locations |
-| Events folder | StorytellerSuite/Events |
-| Groups folder | StorytellerSuite/Groups |
-| Scenes folder | StorytellerSuite/Scenes |
-| Chapters folder | StorytellerSuite/Chapters |
-| Gallery folder | StorytellerSuite/Gallery |
-| References folder | StorytellerSuite/References |
-| Plot items folder | StorytellerSuite/PlotItems |
-| Cultures folder | StorytellerSuite/Cultures |
-| Economies folder | StorytellerSuite/Economies |
-| Magic systems folder | StorytellerSuite/MagicSystems |
-| Compendium folder | StorytellerSuite/Compendium |
-| Templates folder | StorytellerSuite/Templates |
-| Character sheets folder | StorytellerSuite/CharacterSheets |
+Each entity type can use its own folder path. Paths are relative to the vault root.
+
+| Setting | Default idea |
+|---------|--------------|
+| Characters folder | Character notes |
+| Locations folder | Location notes |
+| Events folder | Event notes |
+| Groups folder | Group notes |
+| Scenes folder | Scene notes |
+| Chapters folder | Chapter notes |
+| Sessions folder | Campaign session notes |
+| Gallery folder | Image storage |
+| References folder | Reference notes |
+| Plot items folder | Item notes |
+| Cultures folder | Culture notes |
+| Economies folder | Economy notes |
+| Magic systems folder | Magic system notes |
+| Compendium folder | Compendium notes |
+| Templates folder | Template files |
+| Character sheets folder | Generated sheet output |
+
+The important addition for the new RPG flow is **Sessions folder**. That is where Campaign Play stores session notes and logs.
+
+## Timeline and parsing
+
+### Custom fields serialization
+This controls how custom fields are written into note frontmatter.
+
+- **Flatten** - custom fields are written at the top level. Best for Dataview and direct querying.
+- **Nested** - custom fields are grouped under one key. Best if you want cleaner frontmatter namespaces.
+
+### Custom today
+Overrides what the plugin treats as `today` for relative date parsing.
+
+Useful for:
+- long-running fictional timelines
+- campaign prep where you want a fixed in-world date
+- reproducible timeline review
+
+## Timeline defaults
+
+### Default timeline grouping
+The first grouping mode when you open the timeline.
+
+Current grouping modes:
+- none
+- by location
+- by group
+- by character
+
+### Default zoom preset
+Controls the first zoom state when the timeline opens.
+
+### Default stacking
+If enabled, overlapping items stack by default instead of fighting for the same space.
+
+### Default density
+Controls how compressed or spread out the initial timeline render feels.
+
+### Show legend by default
+Toggles whether the legend starts open.
+
+## Gantt settings
+
+These affect the Gantt-style timeline mode.
+
+### Show progress bars in Gantt
+Shows progress overlays on duration-based items.
+
+### Default Gantt duration
+Used when an event has a start date but no end date.
+
+### Dependency arrow style
+Controls whether dependency arrows are solid, dashed, or dotted.
+
+## Vault note timeline inclusion
+
+These two settings let regular notes appear on the timeline even when they are not formal event notes.
+
+### Timeline watch property
+Any note with this frontmatter property is included on the timeline using the property's value as the date.
+
+Example:
+
+```yaml
+timeline-date: 2025-01-15
+```
+
+### Timeline watch tag
+Any note with this tag and a normal `date` field is included on the timeline.
+
+Example:
+
+```yaml
+tags:
+  - timeline
+date: 2025-01-15
+```
 
 ## Maps
 
-**Enable internal Leaflet processor**
-Controls whether Storyteller Suite's built-in Leaflet map renderer is active. Disable this if you use the standalone Obsidian Leaflet community plugin to prevent conflicts.
+### Enable internal Leaflet processor
+Turns the built-in map renderer on or off.
 
-**Location pins open associated map**
-When enabled, clicking a location marker on a map that has an associated child map navigates directly to that child map instead of opening a popup.
+Disable this if you want to rely on another Leaflet plugin instead.
 
-## Timeline
+### Location pins open associated map
+If enabled, clicking a location marker with a linked child map jumps straight into that child map.
 
-**Default timeline grouping**
-The grouping mode applied when first opening the timeline. Options: none, by character, by location, by tag. This setting persists between sessions.
+## Character sheets
 
-## Character Sheets
+### Default character sheet theme
+The theme preselected when the character sheet preview opens.
 
-**Default character sheet theme**
-The theme pre-selected when the character sheet preview modal opens. Options: Classic, Manuscript, Minimal, Dossier, Neon, D&D, and any custom themes you have created.
+Built-in themes currently include:
+- Classic
+- Manuscript
+- Minimal
+- Dossier
+- Neon
+- D&D
 
-**Custom character sheet templates**
-A list of your custom HTML themes. Each can be added, edited, or deleted from this section. See [[Storyteller docs/features/Character Sheets\|Character Sheets]] for the full token reference.
+### Custom character sheet templates
+This is where your custom HTML-based character sheet themes are managed.
+
+## Important note about compile workflows
+
+Compile workflows are **not** managed from Settings.
+
+They live in the **Compile** tab of the dashboard, where you can:
+- choose a workflow per draft
+- customize presets
+- save custom workflows
+- add custom JavaScript compile steps

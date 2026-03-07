@@ -5,41 +5,112 @@
 
 # Quick Start
 
-This guide walks you through setting up your first story in under five minutes.
+This guide gets a new story working quickly, then points you to the deeper systems.
 
-## 1. Create a Story
+## 1. Create a story
 
-Open the command palette (`Ctrl/Cmd + P`) and run **Storyteller Suite: Create new story**. Give it a name and an optional description. This story acts as the container for all your entities — characters, locations, events, and so on.
+Open the command palette (`Ctrl/Cmd + P`) and run **Storyteller Suite: Create new story**.
 
-Only one story is active at a time. The active story determines which entities appear in lists and which folder paths are used.
+A story is the active container for your notes, folders, and dashboard lists. Only one story is active at a time.
 
-## 2. Open the Dashboard
+## 2. Open the dashboard
 
-Run **Storyteller Suite: Open dashboard view** from the command palette, or click the Storyteller Suite icon in the left sidebar ribbon. The dashboard is the main hub with tabs for Characters, Locations, Events, Maps, Groups, Scenes, and more.
+Use **Storyteller Suite: Open dashboard view** or click the book ribbon icon.
 
-## 3. Add Your First Character
+The dashboard is where most day-to-day work happens:
+- Characters
+- Locations
+- Events
+- Groups
+- Scenes
+- Maps
+- Compile
+- Analytics
 
-In the dashboard, go to the **Characters** tab and click **Create character**, or run **Storyteller Suite: Create new character** from the command palette.
+## 3. Add your first character
 
-Fill in the name and any details you want. The character form has sections for:
-- Basic info (name, status, affiliations, age, occupation)
-- Portrait image
-- Traits and description
-- Backstory
-- Relationships (links to other characters)
-- Group memberships
-- Custom fields
+Go to **Characters** and create a character.
 
-Click **Save**. The plugin creates a note for the character in your configured Characters folder.
+Start with just these fields:
+- Name
+- Description
+- Traits
+- Status
+- Group membership
 
-## 4. Apply a Template (Optional)
+If you plan to use campaign play, also fill in:
+- D&D class / subclass / race / level
+- STR / DEX / CON / INT / WIS / CHA
+- Max HP, current HP, AC, speed
+- Owned items
 
-If you want a head start with pre-built characters, locations, and relationships, use a story template. Run **Storyteller Suite: Open story template gallery** and pick one (Fantasy Kingdom, Cyberpunk Metropolis, Murder Mystery, and others are included). You can preview what entities the template creates before applying it.
+See [[Storyteller docs/features/Characters\|Characters]].
 
-## 5. View the Timeline
+## 4. Add one location and one event
 
-Add an event to your story via **Storyteller Suite: Create new event** and then open the timeline with **Storyteller Suite: Open timeline panel**. Events appear on a scrollable timeline. You can add era overlays, multiple tracks, and filter by character or location.
+Create a location, then create an event that happens there.
+
+That gives you enough data to test:
+- dashboard filtering
+- map placement
+- timeline grouping
+- milestone highlighting
+
+## 5. Open the timeline
+
+Use **Storyteller Suite: Open timeline panel**.
+
+The current timeline supports:
+- timeline view and Gantt view
+- grouping by character, location, or group
+- search jump-to-event
+- milestone-only filtering
+- eras and custom tracks
+
+See [[Storyteller docs/features/Events and Timeline\|Events and Timeline]].
+
+## 6. Build one scene
+
+Create a scene and give it:
+- a chapter
+- a POV character
+- linked location
+- linked characters
+- linked items if needed
+
+If you are writing normally, this is enough to start drafting.
+
+If you are running a campaign-style session, use **Edit Branches & Encounter Table** inside the scene to add choices, dice checks, gates, and outcomes.
+
+See [[Storyteller docs/features/Manuscript\|Manuscript]] and [[Storyteller docs/features/Campaign Play\|Campaign Play]].
+
+## 7. Optional: run your first campaign session
+
+The new D&D / campaign flow works best when you already have:
+- at least 2 characters with D&D stats
+- 1 scene with branches
+- 1 or 2 plot items
+
+Then:
+1. Click the swords ribbon icon to open Campaign Play.
+2. Create a session.
+3. Pick a starting scene.
+4. Select party members.
+5. Run the scene and test HP, inventory, flags, and scene navigation.
+
+See [[Storyteller docs/features/Campaign Play\|Campaign Play]].
+
+## 8. Optional: customize compile output
+
+Open the **Compile** tab in the dashboard when you are ready to turn scenes into a manuscript export.
+
+Each draft can use its own workflow, and workflows can include built-in cleanup steps plus your own custom JavaScript steps.
+
+See [[Storyteller docs/features/Manuscript\|Manuscript]].
 
 ---
 
-Next: [[Storyteller docs/features/Characters\|Characters]]
+Next:
+- [[Storyteller docs/features/Characters\|Characters]]
+- [[Storyteller docs/features/Campaign Play\|Campaign Play]]
+- [[Storyteller docs/features/Manuscript\|Manuscript]]

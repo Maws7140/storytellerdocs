@@ -5,45 +5,117 @@
 
 # Maps
 
-The map view is an interactive Leaflet-based viewer that lets you place entity markers on images, world maps, city plans, dungeon layouts, or any image file in your vault.
-![|640x360](https://i.ibb.co/KxyzHm27/04c0d160200a.png)
-## Opening the Map View
+Maps are the spatial layer of Storyteller Suite. They can be simple image maps for fictional settings or real-world maps backed by tile layers.
 
+## Two map modes
 
-**Command palette:** Storyteller Suite: Open map view
-**Dashboard:** Maps tab
+### Image maps
+Use image maps for:
+- world maps
+- city plans
+- dungeon layouts
+- battle maps
+- floor plans
 
-## Creating a Map
+You provide an image and place markers on top of it.
 
-In the Maps tab of the dashboard, click **Create map**. Give the map a name and select an image from your vault as the base layer. The image can be any format Obsidian supports — PNG, JPG, WebP, and so on.
+### Real-world maps
+Use real-world maps when you want latitude / longitude navigation with tile servers or OpenStreetMap style behavior.
 
-## Placing Markers
+## Opening the map system
 
-### Location Markers
-Switch the map to placement mode using the placement button in the toolbar. Click anywhere on the map to drop a location marker. A prompt appears to select which location from your story to attach to that point.
+- **Command palette:** `Storyteller Suite: Open map view`
+- **Dashboard:** Maps tab
 
-Location markers are displayed with a pin icon. Clicking a marker opens a popup with the location's name and description, plus buttons to open the location's note or navigate to a linked child map.
+## Creating a map
 
-### Entity Markers
-Entities other than locations (characters, events, items, groups) can also be placed on the map. Each entity type uses a distinct icon. Clicking an entity marker opens a popup with the entity's name and a button to open its note.
+A map note can define:
+- display name
+- map type (`image` or `real`)
+- base image or tile layer
+- default zoom / bounds / center
+- parent map
+- linked location
+- custom fields
 
-## Portal Links
+## Marker sources
 
-A location can be linked to another map — for example, a city on a world map linked to a detailed city map. This creates a portal: the location marker shows a map icon in its popup, and clicking it navigates to the linked map. Portals allow drilling down through map hierarchy.
+Storyteller Suite supports more than one way to get markers onto a map.
 
-## Map Hierarchy
+### 1. Manual placement
+Place locations and other entities directly from the map UI.
 
-Maps and locations form a tree. A world map can contain region locations, each linked to a region map, which contains city locations linked to city maps, and so on. The map view maintains context as you navigate between levels.
+Best for:
+- quick setup
+- one-off markers
+- maps you edit mostly by hand
 
-## Editing Maps
+### 2. Frontmatter-based markers
+Notes with marker-compatible frontmatter can be scanned into a map.
 
-Click the edit button in the map toolbar to open the map settings. You can:
-- Rename the map
-- Replace the base image
-- Set a parent map for this map
-- Link this map to a location (so it appears as a portal on the parent map)
-- Add custom fields
+Best for:
+- keeping map placement attached to the entity note
+- reusing the same location on multiple maps
+- syncing map state with location notes
 
-## Multiple Maps
+### 3. Marker files / marker folders
+A map can scan specific files or folders for marker data.
 
-You can have any number of maps in a story. Switch between them using the map selector dropdown at the top of the map view.
+Best for:
+- large map projects
+- splitting marker data across regions
+- map maintenance by folder conventions
+
+### 4. Code block markers
+A map note can also include marker definitions inside a code block.
+
+Important: code block markers are useful for authored layouts, but they are effectively note-driven content. If you want to change them, edit the source note rather than expecting full in-map editing.
+
+## Linked child maps and portals
+
+Maps and locations can form a hierarchy.
+
+Typical pattern:
+- world map -> region location -> region map
+- region map -> city location -> city map
+- city map -> building location -> interior map
+
+When a location is linked to another map, that marker acts like a portal and can jump to the child map.
+
+## Linked entities on maps
+
+Maps are not limited to locations. They can also reference:
+- characters
+- events
+- items
+- groups
+- cultures
+- economies
+- magic systems
+- scenes
+- references
+
+Use this when a map is more than just geography and needs to reflect story state.
+
+## When to use which approach
+
+Use manual placement when the map is still changing quickly.
+
+Use frontmatter markers when:
+- the entity note should stay the source of truth
+- you want properties-pane visibility
+- you want the same entity to appear on multiple maps cleanly
+
+Use code block markers when:
+- you want the map note itself to define a static layout
+- you are documenting a reference map rather than interactively editing it
+
+## Related settings
+
+Map behavior is also affected by settings such as:
+- internal Leaflet processor
+- frontmatter marker support
+- marker scanning
+- child-map navigation from location pins
+
+See [[Storyteller docs/reference/Settings\|Settings]].

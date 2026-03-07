@@ -6,7 +6,7 @@
 # Character Sheets
 
 Storyteller Suite can generate a formatted character sheet from any character's data. Sheets can be exported as a standalone HTML file or saved as an Obsidian note.
-![](https://i.ibb.co/SXDwp8VN/MA3utg-D.png)
+![Character note screenshot](https://i.imgur.com/eFj6FA7.png)
 
 ## Generating a Sheet
 

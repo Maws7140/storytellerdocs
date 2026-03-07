@@ -5,22 +5,31 @@
 
 # Storyteller Suite
 
-Storyteller Suite is an Obsidian plugin for writers who want to manage their story world without leaving their vault. Characters, locations, events, groups, maps, manuscripts, and more — all stored as plain Obsidian notes, all editable directly or through the plugin's interface.
-![](https://i.ibb.co/6Jr2v9Fc/m3k-Jrkv.png)
+Storyteller Suite is an Obsidian plugin for building story worlds, planning manuscripts, and running interactive campaign-style sessions without leaving your vault. Everything is stored as normal notes, so the plugin layer stays optional instead of locking your data into a database.
 
 ## What it does
 
-- **Characters** — full character sheets with portraits, physical attributes (race, gender, age, height, quirks), relationships, affiliations, custom fields, and an exportable character sheet in six visual themes
-- **Locations** — hierarchical location pages with sensory profiles, associated images, child locations, and interactive map placement
-- **Events and Timeline** — a visual timeline with multi-track support, era overlays, conflict detection, and timeline forks
-- **Groups** — factions, organizations, and other groups with members, relationships, and inter-group dynamics; each group is a linkable vault note
-- **Maps** — an interactive Leaflet-based map viewer with entity markers, portal links between maps, and placement mode
-- **Compendium** — a world-knowledge database for creatures, plants, materials, potions, and phenomena; supports rarity, danger rating, ecology notes, and circular links to all entity types
-- **Manuscript** — chapter and scene management with draft ordering, word count tracking, and manuscript compilation
-- **Templates** — six built-in story-world templates (Fantasy Kingdom, Cyberpunk Metropolis, Murder Mystery, and others) plus a full template editor for custom templates
-- **Gallery** — image management for portraits and location art
-- **Analytics** — writing velocity, character screen time, POV tracking, and pacing analysis
-- **Network Graph** — a visual graph of entity relationships
+- **Characters** - rich character notes with portraits, relationships, custom fields, D&D/RPG stats, owned items, and exportable character sheets.
+- **Locations** - hierarchical places with map bindings, linked entities, atmosphere details, and optional campaign modifiers like ambient flags.
+- **Events and Timeline** - timeline and Gantt views, milestone filtering, grouping, search, tracks, eras, and optional inclusion of regular vault notes.
+- **Campaign Play** - a DM-facing play mode for running scenes with party HP, inventory, flags, branch choices, and encounter tables.
+- **Groups** - factions, families, organizations, and other collections of characters, locations, items, and events.
+- **Maps** - image and real-world maps with markers, portals, linked child maps, and marker sources from notes or code blocks.
+- **Compendium** - reference notes for creatures, materials, spells, plants, and other worldbuilding knowledge.
+- **Manuscript** - chapters, scenes, drafts, story board views, compile workflows, and custom compile steps.
+- **Templates** - built-in story templates plus editable entity and world templates.
+- **Analytics** - POV stats, pacing views, heatmaps, screen-time style reports, and writing analytics panels.
+
+## Where to start
+
+If you just installed the plugin, start here:
+
+- [[Storyteller docs/getting-started/Installation\|Installation]]
+- [[Storyteller docs/getting-started/Quick Start\|Quick Start]]
+
+If you want to use the new RPG / campaign tools, read this next:
+
+- [[Storyteller docs/features/Campaign Play\|Campaign Play]]
 
 ## Navigation
 
@@ -32,6 +41,7 @@ Storyteller Suite is an Obsidian plugin for writers who want to manage their sto
 - [[Storyteller docs/features/Characters\|Characters]]
 - [[Storyteller docs/features/Locations\|Locations]]
 - [[Storyteller docs/features/Events and Timeline\|Events and Timeline]]
+- [[Storyteller docs/features/Campaign Play\|Campaign Play]]
 - [[Storyteller docs/features/Groups\|Groups]]
 - [[Storyteller docs/features/Maps\|Maps]]
 - [[Storyteller docs/features/Compendium\|Compendium]]

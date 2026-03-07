@@ -7,6 +7,8 @@
 
 Groups represent any collective entity in your story — factions, guilds, families, governments, cults, crews, armies, or corporations. Members can be characters, locations, events, or items.
 
+![Groups screenshot](https://i.ibb.co/qFCQwY2h/073c396b6682.png)
+
 ## Creating a Group
 
 **Command palette:** Storyteller Suite: Create group

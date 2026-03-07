@@ -5,65 +5,143 @@
 
 # Events and Timeline
 
-The timeline gives you a scrollable, filterable view of your story's events. It supports multiple tracks, era overlays, custom date systems, and conflict detection.
-![](https://i.ibb.co/rKDqXv92/yh2WJ9r.png)
+The timeline is the visual history layer of Storyteller Suite. It can show your story as a traditional event timeline or as a Gantt-style schedule, depending on what you are trying to understand.
 
-## Creating an Event
+## Creating an event
 
-**Command palette:** Storyteller Suite: Create new event
-**Dashboard:** Events tab > Create event button
+Create events from:
+- **Command palette:** `Storyteller Suite: Create new event`
+- **Dashboard:** Events tab -> Create event
 
-## Event Fields
+## Core event fields
 
-- **Name** — the event's title
-- **Date/Time** — the in-world date. The timeline sorts and positions events by this value. Any date format is accepted; the timeline will attempt to parse it.
-- **End date** — for events with duration, displays as a range on the timeline
-- **Status** — planned, in progress, completed, historical, or custom
-- **Location** — links the event to a location
-- **Characters involved** — links characters to this event
-- **Description** — a free-form markdown field
-- **Tags** — for filtering and grouping
-- **Is milestone** — marks the event as a significant story beat, highlighted on the timeline
-- **Is flashback / flashforward** — marks the event's temporal relationship to the main narrative
+- **Name** - the event title
+- **Date / Time** - the main story date used for placement
+- **End date** - optional duration for range-style events and Gantt bars
+- **Status** - planned, active, complete, historical, or custom
+- **Location** - main location reference
+- **Characters involved** - linked characters
+- **Items involved** - linked items
+- **Groups involved** - linked groups
+- **Description** - freeform markdown summary
+- **Tags** - filtering and grouping labels
+- **Milestone** - highlights the event as a major beat
+- **Flashback / flashforward markers** - marks timeline relationship to the main narrative
 
-## The Timeline View
+## Timeline view vs Gantt view
 
-Open the full timeline panel with **Storyteller Suite: Open timeline panel** or from the **View Timeline** button on the dashboard.
+### Timeline view
+Use this when you want to answer:
+- What happened when?
+- Which events overlap?
+- Where are the major beats?
+- How dense is the story in a given period?
 
-### Tracks
+### Gantt view
+Use this when you want to answer:
+- Which events have duration?
+- What depends on what?
+- How crowded is one arc compared to another?
+- What stretches across multiple chapters or acts?
 
-The timeline supports multiple tracks displayed in parallel horizontal lanes. Each track can be filtered to show only events matching certain criteria — by character, location, group, or custom tags. This lets you view, for example, one track showing all events involving a specific character alongside a global track.
+The same event data drives both views.
 
-Manage tracks with **Storyteller Suite: Manage timeline tracks**. Tracks can be reordered by dragging, toggled visible or hidden, and color-coded.
+## Useful toolbar features
 
-### Eras
+The current timeline UI supports:
+- search with jump-to-event results
+- timeline / Gantt toggle
+- milestone-only filtering
+- grouping by character, location, or group
+- date range and zoom controls
+- track and era management
 
-Eras are named date ranges displayed as colored bands behind the timeline. They are useful for marking historical periods, story acts, or in-world ages. Manage eras with **Storyteller Suite: Manage timeline eras**.
+If you work with a large story, the search box is the fastest way to jump to a specific event instead of scrolling for it.
 
-### Timeline Forks
+## Tracks
 
-A timeline fork represents an alternate history or branching narrative. Create forks with **Storyteller Suite: Create timeline fork**. Events in a fork are displayed separately and can be compared to the main timeline.
+Tracks are filtered timeline lanes.
 
-### Conflict Detection
+A track can focus on:
+- one character
+- one location
+- one group
+- a custom filter set
+- the whole story
 
-**Storyteller Suite: Detect timeline conflicts** analyzes your events for logical inconsistencies — characters in two places at once, events referencing entities that do not exist, circular causal chains, and similar problems. Conflicts are displayed in a list with descriptions and suggested resolutions.
+Good uses for tracks:
+- one protagonist plus a global track
+- one city vs another city
+- one faction's activity over time
+- only milestone events
 
-### Filtering
+You can manage tracks manually or use **Auto-generate timeline tracks** to build starter tracks from your current entities.
 
-The timeline toolbar includes filters for:
-- Date range
-- Character
-- Location
-- Tags
-- Event status
-- Milestones only
-- Flashbacks / flashforwards
+## Eras and periods
 
-### Generating Events from Tags
+Eras are named date ranges shown behind the events.
 
-**Storyteller Suite: Generate events from scene tags** scans your scene and chapter notes for date-tagged content and creates timeline events automatically, linking them to the relevant scenes.
+Use them for:
+- acts
+- wars
+- reigns
+- ages
+- campaign arcs
 
-## Viewing All Events
+They are useful when the story is long enough that isolated event dots stop being readable on their own.
 
-**Dashboard:** Events tab
-**Command:** Storyteller Suite: View timeline (modal view)
+## Milestones and alternate chronology
+
+Milestones are just normal events with extra importance. Use them for:
+- inciting incidents
+- reveals
+- deaths
+- act breaks
+- quest completions
+
+Flashback and flashforward markers let you keep an event in the world timeline while still marking that it is told out of sequence.
+
+## Putting normal notes on the timeline
+
+The timeline is no longer limited to formal event notes.
+
+You can also surface regular vault notes in two ways:
+
+### Option 1: timeline watch property
+Add a frontmatter property such as:
+
+```yaml
+timeline-date: 2025-01-15
+```
+
+Any note with the configured watch property appears on the timeline.
+
+### Option 2: timeline watch tag
+Tag a note with the configured timeline tag and add a normal `date` field:
+
+```yaml
+tags:
+  - timeline
+date: 2025-01-15
+```
+
+This is useful when you want journals, research notes, or lore notes to appear on the same timeline without converting them into formal event entities.
+
+## Conflict detection
+
+Use **Detect timeline conflicts** to scan for issues such as:
+- impossible overlaps
+- contradictory dates
+- entities referenced in incompatible states
+- circular chains of dependency
+
+This is a review tool, not just a validator. It is best used after a big round of edits.
+
+## Good defaults
+
+If you are not sure how to structure events yet:
+- use milestones sparingly
+- keep tags short and consistent
+- use groups when the story is faction-heavy
+- switch to Gantt when duration matters more than single dates
+- use tracks only after the main timeline starts feeling crowded
