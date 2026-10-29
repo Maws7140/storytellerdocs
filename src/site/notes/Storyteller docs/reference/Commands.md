@@ -58,6 +58,9 @@ All commands are available from the command palette (`Ctrl/Cmd + P`) unless note
 | Create timeline fork | Create an alternate timeline branch |
 | View timeline forks | Review saved timeline forks |
 | View timeline conflicts | Review saved conflict results |
+| Manage custom calendars | Create, edit, duplicate, or delete dating systems (2.0 beta) |
+| Manage timeline themes | List, use, duplicate, edit, share, or delete timeline themes (2.0 beta) |
+| Edit timeline theme | Open the theme editor on the active story's theme (2.0 beta) |
 
 ## Groups
 

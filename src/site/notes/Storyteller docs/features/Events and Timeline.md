@@ -28,9 +28,21 @@ Create events from:
 - **Milestone** - highlights the event as a major beat
 - **Flashback / flashforward markers** - marks timeline relationship to the main narrative
 
-## Timeline view vs Gantt view
+## Views
 
-### Timeline view
+> **Storyteller 2.0 (beta)** replaces the old timeline with a native canvas timeline. It stays fast on very large stories, follows your story's calendar, and draws everything below. Install the beta through BRAT from the `2.0.0-beta` prereleases. Your existing event notes are not changed or migrated.
+
+Switch views with the segmented control at the left of the toolbar:
+
+| View | Best for |
+|---|---|
+| **Chronology** | Events grouped into lanes, each with a marker on a baseline and a labelled chip below it. This is the default. |
+| **Timeline** | One chronological spine with event cards alternating on either side. Choose **Horizontal** or **Vertical**. The vertical view reads like a calendar, with month and year dividers. |
+| **Gantt** | Durations as bars, with dependency arrows. A bar too short for its label becomes a chip, with the real span shaded inside it. |
+
+The same event data drives every view.
+
+### Chronology view
 Use this when you want to answer:
 - What happened when?
 - Which events overlap?
@@ -44,19 +56,111 @@ Use this when you want to answer:
 - How crowded is one arc compared to another?
 - What stretches across multiple chapters or acts?
 
-The same event data drives both views.
+## The toolbar
 
-## Useful toolbar features
+The toolbar is grouped by what each control does:
 
-The current timeline UI supports:
-- search with jump-to-event results
-- timeline / Gantt toggle
-- milestone-only filtering
-- grouping by character, location, or group
-- date range and zoom controls
-- track and era management
+- **What you are looking at:**
+  - the view switch
+  - **Group**: none, location, group, character, track, item, culture or magic system
+  - **Track**
+  - **Branch**: appears once you have alternate timelines
+- **How much is on screen:** one zoom control that shows the visible span, with *Fit every event*, *Show a decade*, *Show a century* and *Jump to today*.
+- **How it is drawn:**
+  - **Theme** (see [[Storyteller docs/features/Timeline Themes\|Timeline Themes]])
+  - **Edit**
+  - **Show**: era backgrounds, presence bands, scenes, vault notes, stacking and narrative order, plus *Manage eras…*
+- **On the right:**
+  - the conflict badge
+  - search with jump-to-event results
+  - an overflow menu with *Export…* and *Refresh*
 
-If you work with a large story, the search box is the fastest way to jump to a specific event instead of scrolling for it.
+Each manager sits next to the list it manages: *Manage tracks…* at the end of the Track list, *Manage branches…* at the end of the Branch list, and *Edit theme…* and *Manage themes…* at the end of the Theme list.
+
+## Navigating
+
+- **Scroll:** a plain mouse wheel scrolls the lanes. When there are no lanes to scroll, it pans the time axis.
+- **Zoom:** <kbd>Shift</kbd> + wheel, <kbd>Ctrl</kbd> + wheel, or a trackpad pinch zooms at the cursor. You can zoom from centuries down to minutes, depending on the calendar.
+- **Touch:** drag to pan, and pinch to zoom.
+- **Hover** over an event for its name, date, location, lane, description and any conflict messages.
+
+## Editing dates on the timeline
+
+Press **Edit** in the toolbar to turn on edit mode:
+
+- Every place you can drop an event shows as a hollow **date slot**. Slots follow the active calendar's real days, weeks, months, years and decades.
+- Draggable events get an accent ring around their marker. Drag the **marker** to a new date and release to save it. The notice shows the old date, because there is no undo.
+- Scenes, vault notes and events with approximate dates ("around 1420") can't be dragged, so a vague date is never replaced with a precise one.
+
+## What the timeline shows
+
+- **Milestones** are gold stars. Pick a colour in the event modal to override the gold.
+- **Conflicts:** an event involved in a conflict shows `!!` or `!` before its name, and its label takes the conflict colour.
+- **Approximate dates** draw with a dashed outline.
+- **Certainty:** an event marked reported, disputed or legendary draws faded, and its tooltip explains why.
+- **Narrative order** (*Show → Narrative order*) adds `[n]` sequence numbers and draws narrative links between events.
+- **Presence bands** (with *Group: character*) show where each character was between events, from their location history.
+
+## Calendars
+
+Each story can use its own **dating system**. Open Settings → Timeline → *Manage calendars*, or run `Manage custom calendars`. In the calendar designer you can set:
+
+- any number of months
+- leap rules
+- day or minute precision
+- seasonal cycles
+- holidays
+
+The axis, date slots and dragging all follow the active calendar. The bundled examples are Gregorian, Thirteen Moons and Japanese kō. Calendars can be shared as `.storycal.json` files or share codes.
+
+## Alternate timelines (branches)
+
+Create a branch with `Create timeline fork`, then pick it from the **Branch** field:
+
+- A branch shows the history it grew from, up to its divergence point. Inherited events are faded, because editing one changes every branch.
+- *Compare branches* stacks every branch under its parent. The curves leave at the real divergence point. A branch that is still being explored is dashed, an abandoned one is faint, and a merged one curves back into its parent.
+- `View timeline forks` lists branches with their status, divergence, parent and event count.
+
+Eras, tracks and branches are stored as **notes** in the story's folders. Sharing a story's folder shares its timeline structure too.
+
+## Timeline blocks in notes
+
+Embed a read-only, live timeline in any note with a fenced `timeline` block:
+
+````markdown
+```timeline
+group: character
+eras: true
+characters: Mira, Tavin
+from: 1420
+to: 1430
+height: 420
+theme: Parchment
+```
+````
+
+| Setting | Meaning |
+|---|---|
+| `group` | none, location, group, character, track, item, culture or magic |
+| `gantt` | `true` for the Gantt view |
+| `orientation` | `horizontal` or `vertical` |
+| `height` | Height in pixels, 160–2000 (default 380) |
+| `eras`, `presence`, `narrative`, `stack` | Turn layers on or off |
+| `milestones` | `true` for milestones only |
+| `characters`, `locations`, `groups`, `tags`, `era` | Comma-separated filters |
+| `branch` | A branch id to show |
+| `from`, `to` | Starting visible range. Set both or neither. |
+| `theme` | A timeline theme's name or id |
+
+Unknown settings are listed above the block instead of being silently ignored.
+
+## Exporting
+
+*Export…* in the overflow menu saves the timeline as PNG or JPG, either the current view or the **whole timeline** at high resolution. A theme's background image is included. CSV, JSON and Markdown exports list the visible events.
+
+## Looks and themes
+
+Colours, the lane palette, the label font, sizes and a background image all come from the story's timeline theme. See [[Storyteller docs/features/Timeline Themes\|Timeline Themes]] to pick, edit or share a theme, or to restyle the timeline with a CSS snippet.
 
 ## Tracks
 

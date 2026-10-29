@@ -63,6 +63,23 @@ Useful for:
 - campaign prep where you want a fixed in-world date
 - reproducible timeline review
 
+## Dating system and timeline theme (2.0 beta)
+
+### Dating system
+The calendar the active story's dates are parsed and displayed in. *Manage calendars* opens the calendar designer. The copy button copies a share code for the current calendar.
+
+### Timeline theme
+How the timeline looks for the active story: colours, lane palette, label font, sizes, and a background image.
+
+- *Manage themes* opens the theme list.
+- The pencil button opens the theme editor.
+- The copy button copies a share code for the theme.
+
+The same picker is in the timeline toolbar as **Theme**. See [[Storyteller docs/features/Timeline Themes\|Timeline Themes]].
+
+### Import dating system or timeline theme
+Paste a `.storycal.json` or `.storytl.json` file's contents, or a share code, and press **Import**.
+
 ## Timeline defaults
 
 ### Default timeline grouping
@@ -97,6 +114,8 @@ Shows progress overlays on duration-based items.
 Used when an event has a start date but no end date.
 
 ### Dependency arrow style
+A timeline theme can choose its own arrow style. When it does, the theme's style wins over this setting.
+
 Controls whether dependency arrows are solid, dashed, or dotted.
 
 ## Vault note timeline inclusion
