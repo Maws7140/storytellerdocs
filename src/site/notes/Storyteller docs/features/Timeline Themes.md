@@ -75,7 +75,7 @@ Lane palette colours have an opacity slider too. A see-through colour is saved a
 
 > **Card backing:** in the Timeline view, each event card sits on a backing in the *Background* colour, so lines underneath never show through it. A see-through *Surface* therefore shows the background colour through the card. Make *Background* see-through as well to see what lies beneath.
 
-Colours, lane and chip sizes, and the background image all come from the theme. Your own per-item colours still win over the theme: an event's colour, a coloured track, group, era or branch, and calendar cycle and holiday colours.
+Colours, lane and chip sizes, and the background image all come from the theme. The Calendar view uses the same theme: its colours, font, background image, and the event corner radius, chip height and opacity. Your own per-item colours still win over the theme: an event's colour, a coloured track, group, era or branch, and calendar cycle and holiday colours.
 
 ## Background images
 

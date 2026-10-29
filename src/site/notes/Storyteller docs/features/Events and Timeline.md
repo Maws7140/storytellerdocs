@@ -39,6 +39,7 @@ Switch views with the segmented control at the left of the toolbar:
 | **Chronology** | Events grouped into lanes, each with a marker on a baseline and a labelled chip below it. This is the default. |
 | **Timeline** | One chronological spine with event cards alternating on either side. Choose **Horizontal** or **Vertical**. The vertical view reads like a calendar, with month and year dividers. |
 | **Gantt** | Durations as bars, with dependency arrows. A bar too short for its label becomes a chip, with the real span shaded inside it. |
+| **Calendar** | One month of the story's calendar, filling the pane. An event over several days is a tinted bar; a one-day event shows its icon (or a dot in its colour), its start time and its name. Taller panes show more events per week before the rest fold into *+N more*. Use **Today** and the arrows to change month. On narrow panes it becomes an agenda list. In edit mode, drag an event to another day. |
 
 The same event data drives every view.
 
