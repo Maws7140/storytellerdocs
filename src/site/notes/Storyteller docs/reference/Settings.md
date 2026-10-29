@@ -56,7 +56,7 @@ This controls how custom fields are written into note frontmatter.
 - **Nested** - custom fields are grouped under one key. Best if you want cleaner frontmatter namespaces.
 
 ### Custom today
-Overrides what the plugin treats as `today` for relative date parsing.
+Overrides what the plugin treats as `today` for relative date parsing, the now marker and *Jump to today*, in every story that does not set its own (see *Today for this story* below).
 
 Useful for:
 - long-running fictional timelines
@@ -76,6 +76,9 @@ How the timeline looks for the active story: colours, lane palette, label font, 
 - The copy button copies a share code for the theme.
 
 The same picker is in the timeline toolbar as **Theme**. See [[Storyteller docs/features/Timeline Themes\|Timeline Themes]].
+
+### Today for this story
+The active story's own `today`: an ISO date, a BCE year, or a date in the story's dating system. Leave blank to use *Custom today*, or the system date if that is empty too. The reset button clears it. Also on the timeline's zoom menu as *Set today for this story…*. See [[Storyteller docs/features/Events and Timeline#Today\|Today]].
 
 ### Import dating system or timeline theme
 Paste a `.storycal.json` or `.storytl.json` file's contents, or a share code, and press **Import**.

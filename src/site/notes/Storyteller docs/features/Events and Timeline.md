@@ -66,7 +66,7 @@ The toolbar is grouped by what each control does:
   - **Group**: none, location, group, character, track, item, culture or magic system
   - **Track**
   - **Branch**: appears once you have alternate timelines
-- **How much is on screen:** one zoom control that shows the visible span, with *Fit every event*, *Show a decade*, *Show a century* and *Jump to today*.
+- **How much is on screen:** one zoom control that shows the visible span, with *Fit every event*, *Show a decade*, *Show a century*, *Jump to today* and *Set today for this story…* (see Today below).
 - **How it is drawn:**
   - **Theme** (see [[Storyteller docs/features/Timeline Themes\|Timeline Themes]])
   - **Edit**
@@ -114,6 +114,17 @@ Each story can use its own **dating system**. Open Settings → Timeline → *Ma
 
 The axis, date slots and dragging all follow the active calendar. The bundled examples are Gregorian, Thirteen Moons and Japanese kō. Calendars can be shared as `.storycal.json` files or share codes.
 
+## Today
+
+"Today" is where the now marker sits, what *Jump to today* and the Calendar view's **Today** show, and what relative dates such as "yesterday" count from. Each story can set its own:
+
+- From the timeline: open the zoom control and pick *Set today for this story…*. Leave the field blank, or pick *Use the default today*, to go back to the default.
+- From Settings → Timeline → *Today for this story*, beside the dating system and theme.
+
+Type an ISO date (`1420-06-15`), a BCE year (`44 BCE`), or a date in the story's own calendar (`Bloom 7, 342 AF`). It is read the same way as an event date in that story, so it lands on the same day as an event with the same date.
+
+A story without its own today uses the vault-wide **Custom today** setting, and without that the system date. A timeline block can also set `today:` for itself.
+
 ## Alternate timelines (branches)
 
 Create a branch with `Create timeline fork`, then pick it from the **Branch** field:
@@ -152,8 +163,9 @@ theme: Parchment
 | `branch` | A branch id to show |
 | `from`, `to` | Starting visible range. Set both or neither. |
 | `theme` | A timeline theme's name or id |
+| `today` | A today for this block only, instead of the story's |
 
-Unknown settings are listed above the block instead of being silently ignored.
+Unknown settings, an unknown theme and an unreadable `today` are listed above the block instead of being silently ignored.
 
 ## Exporting
 
