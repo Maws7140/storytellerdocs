@@ -64,7 +64,16 @@ The editor shows a **live preview of your active story's timeline** at the top. 
 | **Connectors** | Line width, and the dependency arrow style. *Use the setting* follows the dependency arrow style in Timeline settings. |
 | **Share** | Copy the theme as a share code or as JSON. |
 
-Every colour row has a ↺ button. It removes the theme's colour so that role goes back to following Obsidian. A colour picker always opens on the colour currently in use, even when that colour is inherited.
+Every colour row has four controls:
+
+- **Colour picker**: the colour itself. It always opens on the colour currently in use, even when that colour is inherited.
+- **Opacity slider**: from 0% (invisible) to 100% (solid). Use it for see-through chips, a faint grid, or a background that lets the Obsidian pane or a background image show through.
+- **Visible toggle**: hides that colour completely. For example, turn off *Grid* for no gridlines, *Today line* for no today marker, or *Lane sidebar* to let the background image run under the lane names. Turning it back on restores the opacity it had.
+- **↺**: removes the theme's colour, so that role goes back to following Obsidian.
+
+Lane palette colours have an opacity slider too. A see-through colour is saved as `#rrggbbaa` (for example `#11223366` is 40%), so themes and share codes keep the opacity.
+
+> **Card backing:** in the Timeline view, each event card sits on a backing in the *Background* colour, so lines underneath never show through it. A see-through *Surface* therefore shows the background colour through the card. Make *Background* see-through as well to see what lies beneath.
 
 Colours, lane and chip sizes, and the background image all come from the theme. Your own per-item colours still win over the theme: an event's colour, a coloured track, group, era or branch, and calendar cycle and holiday colours.
 
@@ -207,7 +216,7 @@ A `.storytl.json` file looks like this. Every field except `id` and `name` is op
 
 | Field | Range | Meaning |
 |---|---|---|
-| `colors.*` | Any CSS colour: `#rgb`, `#rrggbb`, `#rrggbbaa`, `rgb()`, `hsl()` or a colour name | See the variable reference above |
+| `colors.*` | Any CSS colour: `#rgb`, `#rrggbb`, `#rrggbbaa` (with opacity), `rgb()`, `rgba()`, `hsl()`, `hsla()`, a colour name or `transparent` | See the variable reference above |
 | `palette` | 1–24 colours | Lane colours, in order |
 | `font` | A CSS font family | Label font |
 | `background.image` | Vault path, `[[wikilink]]`, `https://` link or `data:image/...;base64,` URI | Background image |
