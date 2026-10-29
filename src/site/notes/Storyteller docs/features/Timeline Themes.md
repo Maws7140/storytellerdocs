@@ -40,7 +40,7 @@ A new theme takes effect on every open timeline of the story straight away. You 
 | **Obsidian native** | Follows your Obsidian theme and any CSS snippet. This is the default. |
 | **High contrast** | Black canvas, white text and saturated lane colours. Good for projection and readability. |
 | **Parchment** | Warm paper, ink text, serif labels and dashed dependency arrows. Suits chronicles and histories. |
-| **Minimal** | Your Obsidian colours with a quiet palette, flat chips and thin lines. |
+| **Quiet** | Your Obsidian colours with a quiet palette, flat chips and thin lines. |
 
 Bundled themes can't be changed in place. If you edit one, the editor works on a copy, and saving switches the story to that copy.
 
@@ -147,7 +147,7 @@ Snippets apply while the story uses the **Obsidian native** theme, or a theme th
 | `--sts-timeline-text-accent` | `colors.accentText` | `--text-accent` | Period labels, uncoloured era names |
 | `--sts-timeline-text-on-accent` | `colors.onAccent` | `--text-on-accent` | Labels on coloured Gantt bars |
 | `--sts-timeline-accent` | `colors.accent` | `--interactive-accent` | Selection, edit handles, main lane |
-| `--sts-timeline-connector` | `colors.connector` | `--interactive-accent` | Dependency arrows, narrative links |
+| `--sts-timeline-connector` | `colors.connector` | `--interactive-accent` | Narrative links. Gantt dependency arrows take the colour of the lane they leave. |
 | `--sts-timeline-now` | `colors.now` | `--color-red` | Today line |
 | `--sts-timeline-conflict-error` | `colors.conflictError` | `--color-red` | Labels of events with a conflict |
 | `--sts-timeline-conflict-warning` | `colors.conflictWarning` | `--color-yellow` | Labels of events with a possible conflict |
@@ -218,7 +218,7 @@ A `.storytl.json` file looks like this. Every field except `id` and `name` is op
 | `event.radius` | 0–16 px (default 3) | Chip corner radius |
 | `event.height` | 16–48 px (default 24) | Chip height at the default row density |
 | `event.opacity` | 0.2–1 (default 1) | Chip opacity, before certainty fading |
-| `lane.labelWidth` | 80–400 px (default 174) | Lane name column |
+| `lane.labelWidth` | 80–400 px (default 174) | Lane name column at full size. It still narrows on small panes. |
 | `lane.height` | 20–200 px (default 36) | Minimum lane height |
 | `lane.gap` | 0–40 px (default 8) | Space below each lane's last row |
 | `axis.density` | 0–100 (default 50) | Date label packing. Higher fits more labels. |
